@@ -53,7 +53,7 @@ stages:
         job_name_suffix: x64_RelWithDebInfo
         RunOnnxRuntimeTests: ${{ parameters.RunOnnxRuntimeTests }}
         ORT_EP_NAME: CUDA
-        WITH_CACHE: true
+        WITH_CACHE: false
         MachinePool: onnxruntime-Win2022-GPU-A10-beta
 
 - stage: training
@@ -73,7 +73,7 @@ stages:
         job_name_suffix: x64_RelWithDebInfo
         RunOnnxRuntimeTests: ${{ parameters.RunOnnxRuntimeTests }}
         ORT_EP_NAME: CUDA
-        WITH_CACHE: true
+        WITH_CACHE: false
         MachinePool: onnxruntime-Win2022-GPU-A10-beta
         isTraining: true
 
@@ -114,5 +114,5 @@ stages:
         RunOnnxRuntimeTests: false
         GenerateDocumentation: true
         ORT_EP_NAME: CUDA # It doesn't really matter which EP is selected here since this stage is for documentation.
-        WITH_CACHE: true
+        WITH_CACHE: false
         MachinePool: onnxruntime-Win2022-GPU-A10-beta
